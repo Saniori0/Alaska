@@ -52,11 +52,5 @@ $errorMiddleware->setDefaultErrorHandler(function (
 
 });
 
-$app->get("/git/pull", function (Request $request, Response $response, $args) {
-
-    var_dump(exec("../pull.sh"));
-    return $response;
-
-});
 
 $app->run();
