@@ -1,1 +1,3 @@
-git clone https://github.com/Saniori0/Alaska.git
+git add -A .
+git commit -m "Auto pulling"
+git pull origin main
