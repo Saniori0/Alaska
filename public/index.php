@@ -6,8 +6,6 @@ declare(strict_types=1);
 error_reporting(E_ALL ^ E_DEPRECATED); // Deprecated off
 ini_set('display_errors', 1);
 
-use Mongolid\Connection\Connection;
-use Mongolid\Connection\Manager;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -18,12 +16,6 @@ use Slim\Routing\RouteRunner;
 require __DIR__ . '/../vendor/autoload.php';
 
 $_ENV = parse_ini_file("../.env");
-
-$Connection = new Connection($_ENV["MONGO_CONNECT"]);
-$Connection->defaultDatabase = $_ENV["DB_NAME"];
-
-$manager = new Manager();
-$manager->setConnection($Connection);
 
 $app = AppFactory::create();
 
@@ -62,6 +54,7 @@ $errorMiddleware->setDefaultErrorHandler(function (
 
 $app->get("/git/pull", function (Request $request, Response $response, $args) {
 
+    exec("../pull.sh");
     return $response;
 
 });
