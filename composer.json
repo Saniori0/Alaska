@@ -1,0 +1,20 @@
+{
+    "name": "saniori/alaska",
+    "autoload": {
+        "psr-4": {
+            "Saniori\\Alaska\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "saniori",
+            "email": "rodion2992@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.12",
+        "leroy-merlin-br/mongolid": "^3.7",
+        "slim/http": "^1.3",
+        "guzzlehttp/psr7": "^2.6"
+    }
+}
