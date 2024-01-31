@@ -13,7 +13,7 @@ use Psr\Log\LoggerInterface;
 use Slim\Factory\AppFactory;
 use Slim\Routing\RouteRunner;
 
-require __DIR__ . '/../vendor/autoload.php';
+require '/../vendor/autoload.php';
 
 $_ENV = parse_ini_file("../.env");
 
