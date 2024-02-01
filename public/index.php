@@ -52,5 +52,11 @@ $errorMiddleware->setDefaultErrorHandler(function (
 
 });
 
+$app->post("/account", function (Request $request, Response $response, $args) {
+
+    var_dump($request->getParsedBody());
+
+    return $response;
+});
 
 $app->run();
